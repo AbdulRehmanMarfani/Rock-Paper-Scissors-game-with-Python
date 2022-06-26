@@ -1,0 +1,30 @@
+import random
+
+def rps(computer, mine):
+    if(computer == mine):
+        return None
+    if(computer == 'r' and mine == 'p'):
+        return True
+    elif(computer == 'p' and mine == 's'):
+        return True
+    elif(computer == 's' and mine == 'r'):
+        return True
+    else:
+        return False
+
+choice = ('r', 'p', 's')
+computer = random.randint(0, 2)
+computer = choice[computer]
+print("Hello there user, This is a game of rock paper scissors. Here are the instructions on how to play:")
+mine = input("EITHER\n""You can choose rock by typing:'r',\nOR\nYou can choose paper by typing:'p',\nOR\nYou choose scissors by typing:'s'.\nChoose wisely: ")
+
+win = rps(computer, mine)
+if win:
+    print("You chose", mine, "and the computer chose", computer, "so,")
+    print("You won the match 🏆")
+elif win == None:
+    print("You chose", mine, "and the computer chose", computer, "so,")
+    print("Match is drawn 😶")
+else:
+    print("You chose", mine, "and the computer chose", computer, "so,")
+    print("You lost the match LOL 🤣")
